@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#/usr/bin/python3
 '''
 Created on 2021/09/26
 
@@ -7,6 +7,7 @@ Created on 2021/09/26
 '''
 
 import os, time
+from os import path
 from re import sub
 
 class samba_convert(object):
@@ -36,13 +37,14 @@ class samba_convert(object):
 					output_content = sub('\s{2,}', ',', l_r_strip.strip())
 					# print(output_content)
 					output_content_echo = 'echo ' + output_content + ' >> samba_convert.txt'
-					# print(output_content_echo)
-					os.system(output_content_echo)
+					output_content_replace =  output_content_echo.replace('(', '\(').replace(')', '\)')
+					# print(output_content_replace)
+					os.system(output_content_replace)
 		except:	
 			raise('Error.')
 
 if __name__ == '__main__':
-	os.system('del samba_convert.txt')
+	os.system('rm -rf samba_convert.txt')
 	time.sleep(1)
 	sb_t = samba_convert()
 	print('Catch the samba.txt...')
