@@ -29,12 +29,15 @@ class samba_convert(object):
 				# print(l_r_strip)
 				if 'Interface' in l_r_strip:
 					output_title = self.initial(0)
-					print(output_title)
-					os.system('echo ' + output_title + ' >> samba_convert.txt')
+					# print(output_title)
+					output_title_echo = 'echo ' + output_title + ' >> samba_convert.txt'
+					os.system(output_title_echo)
 				else:
 					output_content = sub('\s{2,}', ',', l_r_strip.strip())
-					print(output_content)
-					os.system('echo ' + output_content + ' >> samba_convert.txt')
+					# print(output_content)
+					output_content_echo = 'echo ' + output_content + ' >> samba_convert.txt'
+					# print(output_content_echo)
+					os.system(output_content_echo)
 		except:	
 			raise('Error.')
 
@@ -45,4 +48,4 @@ if __name__ == '__main__':
 	print('Catch the samba.txt...')
 	time.sleep(1)
 	sb_t.open_file('samba.txt')
-	print('\n\tThe \"samba.txt\" file is converted to \"samba_convert.txt\"')
+	print('\nThe \"samba.txt\" file is converted to \"samba_convert.txt\"')
