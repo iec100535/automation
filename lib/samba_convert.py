@@ -9,7 +9,7 @@ Created on 2021/09/26
 from os import system
 from re import sub
 
-class samba_trans(object):
+class samba_convert(object):
 
 	def initial(self, num):
 		numbers = {
@@ -27,13 +27,13 @@ class samba_trans(object):
 			if 'Interface' in l_r_strip:
 				output_title = self.initial(0)
 				# print(output_title)
-				system('echo ' + output_title + ' >> samba_trans.txt')
+				system('echo ' + output_title + ' >> samba_convert.txt')
 			else:
 				output_content = sub('\s{2,}', ',', l_r_strip.strip())
 				# print(output_content)
-				system('echo ' + output_content + ' >> samba_trans.txt')	
+				system('echo ' + output_content + ' >> samba_convert.txt')	
 
 if __name__ == '__main__':
 	system('del samba_trans.txt')
-	sb_t = samba_trans()
+	sb_t = samba_convert()
 	sb_t.open_file('samba.txt')
