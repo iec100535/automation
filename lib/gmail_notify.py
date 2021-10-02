@@ -35,5 +35,5 @@ class gmail_notify(object):
 	
 if __name__ == "__main__":
 	g_n = gmail_notify()
-	g_n.gmail('iec100535@gmail.com', 'Chen.ZL@inventec.com,cute71252@gmail.com')
+	g_n.gmail('iec100535@gmail.com', 'Chen.ZL@inventec.com')
 	g_n.smtplib_smtp()
