@@ -17,10 +17,10 @@ class gmail_notify(object):
 		self.content['subject'] = 'Warning!'  #郵件標題
 		self.content['from'] = sent_email  #寄件者
 		self.content['to'] = receive_email #收件者
-		self.content.attach(MIMEText('Dear 5G SVT members,\n\n\tWarning! \
-			\n\tThe email is tell our members.\n\tWe are under a attack! \
-			\n\tPlease make sure the 5G lab environment, thanks. \
-			\n\t"The email is notify by ZL demo.\"\n\nZL.'))  #郵件內容
+		self.content.attach(MIMEText(
+			'\n\nDear SVT members,\n\n\tWarning! \
+			\n\tWe are under a attack! \
+			\n\t"The SVT NOTIFY is notify by ZL demo.\"\n\nZL.'))  #郵件內容
 
 	def smtplib_smtp(self):
 		with smtplib.SMTP(host='smtp.gmail.com', port='587') as smtp:  # 設定 SMTP 伺服器

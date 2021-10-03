@@ -22,8 +22,7 @@ class line_notify(object):
 		
 if __name__ == '__main__':
 	l_n = line_notify()
-	message = '\n\nDear members,\n\n\tWarning! \
+	message = '\n\nDear SVT members,\n\n\tWarning! \
 			\n\tWe are under a attack! \
-			\n\tPlease make sure the lab environment, thanks. \
-			\n\t"The LINE NOTIFY is notify by ZL demo.\"\n\nZL.'
+			\n\t"The SVT NOTIFY is notify by ZL demo.\"\n\nZL.'
 	l_n.send_message(message)
