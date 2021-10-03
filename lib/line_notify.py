@@ -12,7 +12,7 @@ class line_notify(object):
 		
 	def send_message(self, message):
 		headers = {
-			'Authorization': 'Bearer ' + '5DmYY0lIar4DB25WyHxEJzCMsvqHqVnAxdu7sRawsEZ', # Members
+			'Authorization': 'Bearer ' + 'F3gpivGNwmcRvILJCslMdEVlUHdfFvPKBtib03kJKnT', # SVT
 			'Content-Type': 'application/x-www-form-urlencoded'
 		}
 		params = {'message': message}
