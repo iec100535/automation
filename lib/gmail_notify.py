@@ -13,22 +13,22 @@ import smtplib
 class gmail_notify(object):
 		
 	def gmail(self, sent_email, receive_email):  
-		self.content = MIMEMultipart()  #建立 MIMEMultipart 物件
-		self.content['subject'] = 'Warning!'  #郵件標題
-		self.content['from'] = sent_email  #寄件者
-		self.content['to'] = receive_email #收件者
+		self.content = MIMEMultipart()  # Created on MIMEMultipart OO
+		self.content['subject'] = 'Warning!'  # Mail title
+		self.content['from'] = sent_email  # Sender
+		self.content['to'] = receive_email # Receiver
 		self.content.attach(MIMEText(
 			'\n\nDear SVT members,\n\n\tWarning! \
 			\n\tWe are under a attack! \
-			\n\t"The SVT NOTIFY is notify by ZL demo.\"\n\nZL.'))  #郵件內容
+			\n\t"The SVT NOTIFY is notify by ZL demo.\"\n\nZL.'))  # Mail content
 
 	def smtplib_smtp(self):
-		with smtplib.SMTP(host='smtp.gmail.com', port='587') as smtp:  # 設定 SMTP 伺服器
+		with smtplib.SMTP(host='smtp.gmail.com', port='587') as smtp:  # Set the SMTP Server
 			try:
-				smtp.ehlo()  # 驗證 SMTP 伺服器
-				smtp.starttls()  # 建立加密傳輸
-				smtp.login(self.content['from'], 'vprxkfcpxhpjhmbg')  # 登入寄件者gmail
-				smtp.send_message(self.content)  # 寄送郵件
+				smtp.ehlo()  # Verify the SMTP Server
+				smtp.starttls()  # Build the SSL
+				smtp.login(self.content['from'], 'vprxkfcpxhpjhmbg')  # Login the sender mail
+				smtp.send_message(self.content)  # Send the mail
 				print('Complete!')
 			except Exception as e:
 				print('Error message: ', e)
