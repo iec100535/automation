@@ -27,7 +27,7 @@ class gmail_notify(object):
 			try:
 				smtp.ehlo()  # 驗證 SMTP 伺服器
 				smtp.starttls()  # 建立加密傳輸
-				smtp.login(self.content['from'], 'aipyrivzffkgwmbs')  # 登入寄件者gmail
+				smtp.login(self.content['from'], 'vprxkfcpxhpjhmbg')  # 登入寄件者gmail
 				smtp.send_message(self.content)  # 寄送郵件
 				print('Complete!')
 			except Exception as e:
@@ -35,5 +35,5 @@ class gmail_notify(object):
 	
 if __name__ == "__main__":
 	g_n = gmail_notify()
-	g_n.gmail('iec100535@gmail.com', 'Chen.ZL@inventec.com,chen.kerr@inventec.com')
+	g_n.gmail('iecsvt5g@gmail.com', 'Chen.ZL@inventec.com, iec100535@gmail.com')
 	g_n.smtplib_smtp()
